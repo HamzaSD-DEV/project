@@ -2,10 +2,14 @@
 
     <div class="container">
         <h1 class="text-white" style="text-align:center">My products</h1>
-        <button id="addp" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add new product
-        </button>
+
         <div class="row">
+            <div>
+                <button id="addp" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Add new product
+                </button>
+            </div>
             <div class="card" style="width: 18rem;" v-for="item in Myproducts" :key="item.key">
                 <h2 class="card-title1">Voiture {{ item.name }}</h2>
                 <img :src="item.image" class="card-img-top" alt="../assets/logo.png">
@@ -32,9 +36,19 @@
                         <!-- Add form start here -->
                         <form @submit.prevent="addproduct">
                             <div class="form-group">
-                                <label for="name">Name:</label>
+                                <label for="name">model:</label>
                                 <input class="form-control" type="text" id="name" aria-label="default input example"
                                     v-model="product.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="marque">Marque:</label>
+                                <input class="form-control" type="text" id="marque" aria-label="default input example"
+                                    v-model="product.marque">
+                            </div>
+                            <div class="form-group">
+                                <label for="year">year:</label>
+                                <input class="date-own form-control" type="date-own" id="date-own"
+                                    aria-label="default input example" v-model="product.year">
                             </div>
                             <div class="form-group">
                                 <label for="price">Price:</label>
@@ -77,14 +91,13 @@
                         <!-- update form start here -->
                         <form @submit.prevent="update">
                             <div class="form-group">
-                                <label for="name">Name:</label>
+                                <label for="name">Model:</label>
                                 <input class="form-control" type="text" id="name" aria-label="default input example"
                                     v-model="dataProduct.name">
                             </div>
                             <div class="form-group">
                                 <label for="marque">Marque:</label>
-                                <input class="form-control" type="text" id="marque"
-                                    aria-label="default input example" 
+                                <input class="form-control" type="text" id="marque" aria-label="default input example"
                                     v-model="dataProduct.marque">
                             </div>
                             <div class="form-group">
@@ -116,7 +129,8 @@
                         <!-- update form end here -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" v-on:click="close()">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            v-on:click="close()">Close</button>
 
                     </div>
                 </div>
@@ -222,8 +236,8 @@ export default {
         deleteProduct(key) {
             this.ref.doc(key).delete()
         },
-        close(){
-            this.messageUpdate= ''
+        close() {
+            this.messageUpdate = ''
         },
         previewImage(event) {
             this.uploadValue = 0;

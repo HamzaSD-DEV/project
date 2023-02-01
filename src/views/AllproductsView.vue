@@ -36,8 +36,10 @@ export default {
                 this.products.push({
                     key: doc.id,
                     name: doc.data().name,
-                    description: doc.data().description,
+                    marque: doc.data().marque,
+                    year: doc.data().year,
                     price: doc.data().price,
+                    description: doc.data().description,
                     image: doc.data().image,
                 })
             })

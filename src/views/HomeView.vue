@@ -17,7 +17,7 @@
                       <img :src="item.image" class="card-img-top" alt="../assets/logo.png">
                       <div class="card-body">
                         <h5 class="card-title">Model : {{ item.name }}</h5>
-                        <h5 class="card-title">Marque : {{ item.model }}</h5>
+                        <h5 class="card-title">Marque : {{ item.marque }}</h5>
                         <h5 class="card-title">Year : {{ item.year }}</h5>
                         <h5 class="card-title">Prix : {{ item.price }}</h5>
                         <p class="card-text">Notes : {{ item.description }}</p>
@@ -79,8 +79,10 @@ export default {
         this.products.push({
           key: doc.id,
           name: doc.data().name,
-          description: doc.data().description,
+          marque: doc.data().marque,
+          year: doc.data().year,
           price: doc.data().price,
+          description: doc.data().description,
           image: doc.data().image,
         })
       })
