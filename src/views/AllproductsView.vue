@@ -7,7 +7,8 @@
                 <h2 class="card-title1">{{ item.name }}</h2>
                 <img :src="item.image" class="card-img-top" alt="../assets/logo.png">
                 <div class="card-body">
-                    <h5 class="card-title">Marque       :{{ item.name }}</h5>
+                    <h5 class="card-title">Model       :{{ item.name }}</h5>
+                    <h5 class="card-title">Marque :{{ item.marque }}</h5>
                     <h5 class="card-title">Prix        : {{ item.price }}</h5>
                     <h6 class="card-title">Description</h6>
                       <p class="card-text">{{ item.description }}</p>
