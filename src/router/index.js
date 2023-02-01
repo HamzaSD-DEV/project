@@ -6,7 +6,6 @@ import AllproductsView from '../views/AllproductsView'
 import LoginView from '../views/LoginView'
 import LogoutView from '../views/LogoutView'
 import MyproductsView from '../views/MyproductsView'
-import ProduitView from '../views/ProduitView'
 import SignupView from '../views/SignupView'
 import ProfileView from '../views/ProfileView'
 
@@ -50,11 +49,6 @@ const routes = [
     name: 'user',
     component: ProfileView,
     meta: { requireAuth: true }
-  },
-  {
-    path: '/Produit',
-    name: 'produit',
-    component: ProduitView
   },
   {
     path: '/signup',
